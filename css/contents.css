@@ -1,0 +1,521 @@
+.circleBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 27px;
+  z-index: 500;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.25s ease;
+  background-color: rgb(250, 143, 46);
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.circleBtn:hover {
+  opacity: 0.5;
+}
+.circleBtn span {
+  width: 18px;
+  height: 1px;
+  content: "";
+  background-color: #000;
+}
+.circleBtn span:not(:last-child) {
+  margin-bottom: 3px;
+}
+.circleBtn.blind {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.closeBtn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  z-index: 500;
+  transform: translate(50%, -50%);
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  transition: opacity 0.25s ease;
+  background-color: rgb(250, 143, 46);
+  border-radius: 100%;
+}
+.closeBtn a {
+  display: flex;
+  justify-content: center;
+}
+.closeBtn:hover {
+  opacity: 0.5;
+}
+.closeBtn span {
+  width: 18px;
+  height: 1px;
+  position: absolute;
+  content: "";
+  background-color: #000;
+}
+.closeBtn span:first-child {
+  top: 20px;
+  transform: rotate(45deg);
+}
+.closeBtn span:last-child {
+  top: 20px;
+  transform: rotate(-45deg);
+}
+.closeBtn.blind {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.container {
+  padding: 80px 120px;
+}
+
+#tickets {
+  display: flex;
+  height: 100vh;
+}
+#tickets .posterBox .pc {
+  height: 100%;
+  vertical-align: top;
+}
+#tickets .posterBox .mobile {
+  display: none;
+}
+#tickets .ticketBox {
+  width: 100%;
+}
+#tickets .ticketBox .searchBox {
+  position: relative;
+  padding: 80px 50px 20px;
+  background: rgb(250, 143, 46);
+}
+#tickets .ticketBox .searchBox input {
+  width: 100%;
+  height: 45px;
+  padding: 5px 20px;
+  font-size: 20px;
+  font-weight: 900;
+  box-sizing: border-box;
+}
+#tickets .ticketBox .searchBox button {
+  position: absolute;
+  right: 60px;
+  bottom: 28px;
+}
+#tickets .ticketBox .searchBox button .material-icons {
+  font-size: 22px;
+}
+#tickets .ticketBox .searchBox ::placeholder {
+  color: #ddd;
+}
+#tickets .ticketBox .resultBox {
+  height: calc(100% - 245px);
+  background-color: rgb(83, 102, 233);
+}
+#tickets .ticketBox .resultBox .mapMenu {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 0 30px;
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #455ae7;
+  box-sizing: border-box;
+}
+#tickets .ticketBox .resultBox .mapMenu span {
+  margin: 0 10px;
+}
+#tickets .ticketBox .resultBox .result {
+  padding: 50px 80px;
+  text-align: center;
+  box-sizing: border-box;
+  word-break: keep-all;
+}
+#tickets .ticketBox .resultBox .result .material-icons-outlined {
+  margin-bottom: 30px;
+  font-size: 48px;
+  color: rgba(255, 255, 255, 0.3);
+}
+#tickets .ticketBox .resultBox .result .alert {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+#tickets .ticketBox .resultBox .result .small {
+  font-size: 12px;
+  font-weight: 300;
+}
+#tickets #footer {
+  padding: 0 40px 0px 80px;
+  background-color: #455ae7;
+}
+#tickets #footer .copyright {
+  display: block;
+  color: rgba(255, 255, 255, 0.3);
+}
+#tickets #footer .copyright span {
+  display: block;
+}
+#tickets #footer .copyright span:first-child {
+  margin-bottom: 5px;
+}
+#tickets #footer .legalsCredits {
+  padding: 20px;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#videos {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#videos .tabMenu {
+  width: 300px;
+  height: 100vh;
+  padding: 80px 0;
+  background-color: #111;
+}
+#videos .tabMenu li {
+  height: 150px;
+  margin: 15px 30px;
+}
+#videos .tabMenu li.on img {
+  width: 100%;
+}
+#videos .tabMenu li img {
+  width: 90%;
+}
+#videos .tabMenu li .videoTitle {
+  padding: 15px 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+#videos .tabContents {
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-top: 56%;
+}
+#videos .tabContents iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 100px;
+  box-sizing: border-box;
+}
+
+#story .container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#story .container .poster {
+  height: calc(100vh - 80px);
+  margin-right: 80px;
+  padding-bottom: 80px;
+  max-height: 600px;
+  box-sizing: border-box;
+}
+#story .container .poster img {
+  height: 100%;
+}
+#story .container .descBox {
+  width: 700px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  color: #ccc;
+}
+#story .container .descBox .desc {
+  display: flex;
+  margin-bottom: 80px;
+}
+#story .container .descBox .desc .synopsis {
+  margin-right: 80px;
+}
+#story .container .descBox .desc .synopsis p {
+  margin-bottom: 30px;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+#story .container .descBox .desc .movieInfo .box {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+}
+#story .container .descBox .desc .movieInfo .box strong {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+#story .container .descBox .desc .movieInfo .box span {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+#story .container .cover {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  padding: 10px 0;
+  font-size: 18px;
+  box-shadow: 0px -3px 15px 25px rgba(0, 0, 0, 0.75);
+  box-sizing: border-box;
+  background-color: #000;
+}
+#story .container .cover:before {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-bottom: 15px;
+  content: "";
+  background-color: #fff;
+}
+
+#partners {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 80px;
+}
+#partners img {
+  width: 45%;
+  margin: 0 auto;
+}
+#partners h2 {
+  margin: 50px 0;
+  font-size: 60px;
+}
+#partners .partnersBox {
+  width: 800px;
+  margin: 20px auto 0;
+}
+#partners .partnersBox .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+#partners .partnersBox .row .partners a {
+  display: flex;
+  justify-content: center;
+}
+#partners .partnersBox .row .partners a img {
+  width: 80%;
+}
+
+@media all and (max-width: 1200px) {
+  #story .container .poster {
+    height: 500px;
+    margin-right: clamp(40px, 6vw, 80px);
+  }
+  #story .container .descBox {
+    padding: clamp(50px, 8vw, 80px) 0;
+  }
+  #story .container .descBox .desc .synopsis {
+    margin-right: clamp(25px, 5vw, 80px);
+  }
+  #story .container .descBox .desc .synopsis p {
+    font-size: clamp(14px, 2vw, 19px);
+  }
+  #story .container .descBox .desc .movieInfo .box {
+    font-size: clamp(12px, 2vw, 16px);
+  }
+}
+@media all and (max-width: 960px) {
+  #tickets .ticketBox .resultBox .result {
+    padding: 50px 80px;
+  }
+  #tickets .ticketBox .resultBox .result .material-icons-outlined {
+    margin-bottom: 20px;
+    font-size: clamp(28px, 5vw, 48px);
+  }
+  #tickets .ticketBox .resultBox .result .alert {
+    margin-bottom: 10px;
+    font-size: clamp(16px, 2vw, 20px);
+  }
+  #tickets .ticketBox .resultBox .result .small {
+    font-size: 10px;
+  }
+  #videos .tabContents iframe {
+    padding: clamp(50px, 10vw, 100px);
+  }
+  #story .container {
+    align-items: center;
+    flex-direction: column;
+    padding: 80px clamp(40px, 10vw, 80px);
+  }
+  #story .container .cover {
+    font-size: clamp(15px, 3vw, 18px);
+  }
+  #story .container .poster {
+    height: 500px;
+    margin-right: 0;
+    padding-bottom: 0;
+  }
+  #story .container .descBox {
+    width: auto;
+    padding: clamp(50px, 8vw, 80px) 0;
+  }
+  #story .container .descBox .desc .synopsis {
+    margin-right: clamp(40px, 5vw, 80px);
+  }
+  #story .container .descBox .desc .synopsis p {
+    font-size: clamp(14px, 2vw, 19px);
+  }
+  #story .container .descBox .desc .movieInfo .box {
+    font-size: clamp(12px, 2vw, 15px);
+  }
+  #partners h2 {
+    margin: clamp(30px, 8vw, 50px) 0;
+    font-size: clamp(24px, 8vw, 60px);
+  }
+  #partners .partnersBox {
+    width: clamp(250px, 85vw, 800px);
+  }
+}
+@media all and (max-width: 800px) {
+  .closeBtn {
+    display: none;
+  }
+  #tickets {
+    display: block;
+  }
+  #tickets .ticketBox .searchBox {
+    padding: 20px 40px;
+  }
+  #tickets .resultBox {
+    height: 100%;
+  }
+  #tickets .posterBox .pc {
+    display: none;
+  }
+  #tickets .posterBox .mobile {
+    display: block;
+    width: 100%;
+  }
+  #videos {
+    display: block;
+  }
+  #videos .tabContents {
+    position: fixed;
+    margin-top: 80px;
+  }
+  #videos .tabContents iframe {
+    padding: 0;
+  }
+  #videos .tabMenu {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: auto;
+    height: 0;
+    padding: calc(56% + 110px) 30px 0;
+    background-color: #000;
+  }
+  #videos .tabMenu li {
+    margin: 0 0 30px 0;
+  }
+  #videos .tabMenu li:last-child {
+    padding-bottom: 30px;
+  }
+  #videos .tabMenu li a {
+    display: flex;
+  }
+  #videos .tabMenu li a img {
+    width: 200px;
+  }
+  #videos .tabMenu li a .videoTitle {
+    margin-left: 30px;
+  }
+}
+@media all and (max-width: 640px) {
+  .circleBtn {
+    width: 35px;
+    height: 35px;
+    left: 15px;
+  }
+  #tickets .ticketBox {
+    overflow-x: hidden;
+  }
+  #tickets .ticketBox .searchBox input {
+    width: 100%;
+    height: 35px;
+    padding: 5px 18px;
+    font-size: 14px;
+    font-weight: 900;
+    box-sizing: border-box;
+  }
+  #tickets .ticketBox .searchBox button {
+    right: 50px;
+    bottom: 22px;
+  }
+  #tickets #footer {
+    height: 100%;
+    padding: 0 20px 0px 50px;
+    overflow-x: visible;
+  }
+  #tickets #footer .copyright {
+    padding: 20px 0;
+  }
+  #tickets #footer .legalsCredits {
+    padding-right: 40px;
+    box-shadow: none;
+  }
+  #tickets #footer .legalsCredits:before {
+    width: 110vw;
+    left: -80px;
+    content: "";
+  }
+  #videos {
+    padding-bottom: 100px;
+  }
+  #videos .tabContents {
+    margin-top: 60px;
+  }
+  #videos .tabMenu {
+    padding: calc(56% + 90px) 30px 0;
+    background-color: #000;
+  }
+  #videos .tabMenu li {
+    margin: 0 0 30px 0;
+  }
+  #story .container {
+    padding: 60px auto 60px;
+  }
+  #story .container .poster {
+    height: 400px;
+  }
+  #story .container .descBox {
+    padding: 60px 0;
+  }
+  #partners {
+    padding-top: 60px;
+  }
+  #partners .partnersBox {
+    width: clamp(200px, 45vw, 300px);
+    margin: 0 auto;
+  }
+  #partners .partnersBox .row {
+    display: block;
+    margin-bottom: 0;
+  }
+  #partners .partnersBox .row .partners {
+    margin-bottom: 20px;
+  }
+  #partners .partnersBox .row .partners a img {
+    width: 80%;
+  }
+}

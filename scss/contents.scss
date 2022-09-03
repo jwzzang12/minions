@@ -1,0 +1,573 @@
+@import "vars";
+@import "mixin";
+.circleBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 27px;
+  z-index: 500;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.25s ease;
+  background-color: $orange-color;
+  border-radius: 100%;
+  @include absCenter(false, true);
+  &:hover {
+    opacity: 0.5;
+  }
+  span {
+    width: 18px;
+    height: 1px;
+    content: "";
+    background-color: #000;
+    &:not(:last-child) {
+      margin-bottom: 3px;
+    }
+  }
+  &.blind {
+    // display: none;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+.closeBtn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  z-index: 500;
+  transform: translate(50%, -50%);
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  transition: opacity 0.25s ease;
+  background-color: $orange-color;
+  border-radius: 100%;
+  a {
+    display: flex;
+    justify-content: center;
+  }
+  &:hover {
+    opacity: 0.5;
+  }
+  span {
+    width: 18px;
+    height: 1px;
+    position: absolute;
+    content: "";
+    background-color: #000;
+    &:first-child {
+      top: 20px;
+      transform: rotate(45deg);
+    }
+    &:last-child {
+      top: 20px;
+      transform: rotate(-45deg);
+    }
+  }
+  &.blind {
+    // display: none;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+.container {
+  padding: 80px 120px;
+}
+#tickets {
+  display: flex;
+  height: 100vh;
+  .posterBox {
+    .pc {
+      height: 100%;
+      vertical-align: top;
+    }
+    .mobile {
+      display: none;
+    }
+  }
+  .ticketBox {
+    width: 100%;
+    .searchBox {
+      position: relative;
+      padding: 80px 50px 20px;
+      background: $orange-color;
+      input {
+        width: 100%;
+        height: 45px;
+        padding: 5px 20px;
+        font-size: 20px;
+        font-weight: 900;
+        box-sizing: border-box;
+      }
+      button {
+        position: absolute;
+        right: 60px;
+        bottom: 28px;
+        .material-icons {
+          font-size: 22px;
+        }
+      }
+      ::placeholder {
+        color: #ddd;
+      }
+    }
+    .resultBox {
+      height: calc(100% - 245px);
+      background-color: $sub-color;
+      .mapMenu {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        padding: 0 30px;
+        color: rgba(255, 255, 255, 0.3);
+        background-color: darken($sub-color, 3);
+        box-sizing: border-box;
+        span {
+          margin: 0 10px;
+        }
+      }
+      .result {
+        padding: 50px 80px;
+        text-align: center;
+        box-sizing: border-box;
+        word-break: keep-all;
+
+        .material-icons-outlined {
+          margin-bottom: 30px;
+          font-size: 48px;
+          color: rgba(255, 255, 255, 0.3);
+        }
+        .alert {
+          margin-bottom: 20px;
+          font-size: 20px;
+        }
+        .small {
+          font-size: 12px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+  #footer {
+    padding: 0 40px 0px 80px;
+    background-color: darken($sub-color, 3);
+    .copyright {
+      display: block;
+      color: rgba(255, 255, 255, 0.3);
+      span {
+        display: block;
+        &:first-child {
+          margin-bottom: 5px;
+        }
+      }
+    }
+    .legalsCredits {
+      padding: 20px;
+      box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+#videos {
+  display: flex;
+  flex-direction: row-reverse;
+  .tabMenu {
+    width: 300px;
+    height: 100vh;
+    padding: 80px 0;
+    background-color: #111;
+    li {
+      height: 150px;
+      margin: 15px 30px;
+      &.on {
+        img {
+          width: 100%;
+        }
+      }
+      img {
+        width: 90%;
+      }
+      .videoTitle {
+        padding: 15px 0;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+  .tabContents {
+    width: 100%;
+    height: 0;
+    // margin-left: 100px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    position: relative;
+    padding-top: 56%;
+    iframe {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 100px;
+      box-sizing: border-box;
+      // max-width: 1000px;
+      // max-height: 570px;
+    }
+  }
+}
+#story {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    .poster {
+      height: calc(100vh - 80px);
+      margin-right: 80px;
+      padding-bottom: 80px;
+      max-height: 600px;
+      box-sizing: border-box;
+      img {
+        height: 100%;
+      }
+    }
+    .descBox {
+      width: 700px;
+      height: 450px;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0;
+      color: #ccc;
+      .desc {
+        display: flex;
+        margin-bottom: 80px;
+        .synopsis {
+          margin-right: 80px;
+          p {
+            margin-bottom: 30px;
+            font-size: 19px;
+            font-weight: 300;
+            line-height: 1.2;
+          }
+        }
+        .movieInfo {
+          .box {
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 300;
+            strong {
+              display: inline-block;
+              margin-bottom: 10px;
+              font-weight: 700;
+              color: #fff;
+            }
+            span {
+              display: inline-block;
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+    .cover {
+      width: 100%;
+      height: 60px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 20;
+      padding: 10px 0;
+      font-size: 18px;
+      box-shadow: 0px -3px 15px 25px rgba(0, 0, 0, 0.75);
+      box-sizing: border-box;
+      background-color: #000;
+      &:before {
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin-bottom: 15px;
+        content: "";
+        background-color: #fff;
+      }
+    }
+  }
+}
+#partners {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 80px;
+  img {
+    width: 45%;
+    margin: 0 auto;
+  }
+  h2 {
+    margin: 50px 0;
+    font-size: 60px;
+  }
+  .partnersBox {
+    width: 800px;
+    margin: 20px auto 0;
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 70px;
+      .partners {
+        a {
+          display: flex;
+          justify-content: center;
+          img {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 1200px) {
+  #story {
+    .container {
+      .poster {
+        height: 500px;
+        margin-right: clamp(40px, 6vw, 80px);
+      }
+      .descBox {
+        padding: clamp(50px, 8vw, 80px) 0;
+        .desc {
+          .synopsis {
+            margin-right: clamp(25px, 5vw, 80px);
+
+            p {
+              font-size: clamp(14px, 2vw, 19px);
+            }
+          }
+          .movieInfo {
+            .box {
+              font-size: clamp(12px, 2vw, 16px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 960px) {
+  #tickets {
+    .ticketBox {
+      .resultBox {
+        .result {
+          padding: 50px 80px;
+          .material-icons-outlined {
+            margin-bottom: 20px;
+            font-size: clamp(28px, 5vw, 48px);
+          }
+          .alert {
+            margin-bottom: 10px;
+            font-size: clamp(16px, 2vw, 20px);
+          }
+          .small {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+  #videos {
+    .tabContents {
+      iframe {
+        padding: clamp(50px, 10vw, 100px);
+      }
+    }
+  }
+  #story {
+    .container {
+      align-items: center;
+      flex-direction: column;
+      padding: 80px clamp(40px, 10vw, 80px);
+      .cover {
+        font-size: clamp(15px, 3vw, 18px);
+      }
+      .poster {
+        height: 500px;
+        margin-right: 0;
+        padding-bottom: 0;
+      }
+      .descBox {
+        width: auto;
+        padding: clamp(50px, 8vw, 80px) 0;
+        .desc {
+          .synopsis {
+            margin-right: clamp(40px, 5vw, 80px);
+            p {
+              font-size: clamp(14px, 2vw, 19px);
+            }
+          }
+          .movieInfo {
+            .box {
+              font-size: clamp(12px, 2vw, 15px);
+            }
+          }
+        }
+      }
+    }
+  }
+  #partners {
+    h2 {
+      margin: clamp(30px, 8vw, 50px) 0;
+      font-size: clamp(24px, 8vw, 60px);
+    }
+    .partnersBox {
+      width: clamp(250px, 85vw, 800px);
+    }
+  }
+}
+@media all and (max-width: 800px) {
+  .closeBtn {
+    display: none;
+  }
+  #tickets {
+    display: block;
+    .ticketBox {
+      .searchBox {
+        padding: 20px 40px;
+      }
+    }
+    .resultBox {
+      height: 100%;
+    }
+    .posterBox {
+      .pc {
+        display: none;
+      }
+      .mobile {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  #videos {
+    display: block;
+    .tabContents {
+      position: fixed;
+      margin-top: 80px;
+      iframe {
+        padding: 0;
+      }
+    }
+    .tabMenu {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      width: auto;
+      height: 0;
+      padding: calc(56% + 110px) 30px 0;
+      background-color: #000;
+      li {
+        margin: 0 0 30px 0;
+        &:last-child {
+          padding-bottom: 30px;
+        }
+        a {
+          display: flex;
+          img {
+            width: 200px;
+            // object-fit: contain;
+          }
+          .videoTitle {
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 640px) {
+  .circleBtn {
+    width: 35px;
+    height: 35px;
+    left: 15px;
+  }
+  #tickets {
+    .ticketBox {
+      overflow-x: hidden;
+      .searchBox {
+        input {
+          width: 100%;
+          height: 35px;
+          padding: 5px 18px;
+          font-size: 14px;
+          font-weight: 900;
+          box-sizing: border-box;
+        }
+        button {
+          right: 50px;
+          bottom: 22px;
+        }
+      }
+    }
+    #footer {
+      height: 100%;
+      padding: 0 20px 0px 50px;
+      overflow-x: visible;
+      .copyright {
+        padding: 20px 0;
+      }
+      .legalsCredits {
+        padding-right: 40px;
+        box-shadow: none;
+        &:before {
+          width: 110vw;
+          left: -80px;
+          content: "";
+        }
+      }
+    }
+  }
+  #videos {
+    padding-bottom: 100px;
+    .tabContents {
+      margin-top: 60px;
+    }
+    .tabMenu {
+      padding: calc(56% + 90px) 30px 0;
+      background-color: #000;
+      li {
+        margin: 0 0 30px 0;
+      }
+    }
+  }
+  #story {
+    .container {
+      padding: 60px auto 60px;
+      .poster {
+        height: 400px;
+      }
+      .descBox {
+        padding: 60px 0;
+      }
+    }
+  }
+  #partners {
+    padding-top: 60px;
+    .partnersBox {
+      width: clamp(200px, 45vw, 300px);
+      margin: 0 auto;
+      .row {
+        display: block;
+        margin-bottom: 0;
+        .partners {
+          margin-bottom: 20px;
+          a {
+            img {
+              width: 80%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

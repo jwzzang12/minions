@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <link rel="shortcut icon" href="../images/common/favicon.ico" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <title>Minions: The Rise of Gru</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/contents.css" />
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/greensock/gsap.min.js"></script>
+    <script src="../js/greensock/CSSRulePlugin.min.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="ticketBtn"><a href="tickets.html">Get Tickets</a></div>
+      <div class="shareBtn">
+        <a href="">Share <span class="material-icons"> ios_share </span></a>
+      </div>
+    </header>
+    <!-- header end -->
+    <div class="menu">
+      <ul>
+        <li class="menuLogo"><img src="../images/main/tt2.png" alt="" /></li>
+        <li><a href="|">HOME</a></li>
+        <li><a href="|">SHOWTIMES</a></li>
+        <li class="on"><a href="|">VIDEOS</a></li>
+        <li><a href="|">STORY</a></li>
+        <li><a href="|">PARTNERS</a></li>
+      </ul>
+    </div>
+    <!-- menu end -->
+    <div class="section" id="videos">
+      <div class="bgCover"></div>
+      <div class="tabContents"></div>
+      <ul class="tabMenu">
+        <li data-code="HhIl_XJ-OGA">
+          <a href="">
+            <img src="../images/main/thumbnail01.jpeg" alt="" />
+            <div class="videoTitle">Minions: The Rise of Gru | Official Trailer 3 [HD]</div>
+          </a>
+        </li>
+        <li data-code="6DxjJzmYsXo">
+          <a href="">
+            <img src="../images/main/thumbnail02.jpeg" alt="" />
+            <div class="videoTitle">Minions: The Rise of Gru | Official Trailer</div>
+          </a>
+        </li>
+        <li data-code="VPtcAtAuuQE">
+          <a href="">
+            <img src="../images/main/thumbnail03.jpeg" alt="" />
+            <div class="videoTitle">Minions: The Rise of Gru | On Our way</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- videos end -->
+  </body>
+  <script src="../js/menu.js"></script>
+  <script>
+    const videos = $("#videos");
+    let videosWidth = $("#videos").outerWidth();
+    function changeVideo(code) {
+      tempHtml = `<iframe
+      width="700"
+      height="400"
+      src="https://www.youtube.com/embed/${code}"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  
+      allowfullscreen
+      ></iframe>`;
+      $(".tabContents").html(tempHtml);
+    }
+    changeVideo("HhIl_XJ-OGA");
+    const mobile = function () {
+      let videosWidth = $("#videos").outerWidth();
+      if (videosWidth < 800) {
+        $("#videos").addClass("mobile");
+        $(".tabMenu li").removeClass("on");
+      } else {
+        $("#videos").removeClass("mobile");
+      }
+    };
+    $(window).on("load", function () {
+      mobile();
+    });
+
+    $(window).on("resize", function () {
+      mobile();
+    });
+
+    $(".tabMenu li").on("click", function () {
+      code = $(this).data("code");
+      changeVideo(code);
+      if (videos.hasClass("mobile") == false) {
+        $(this).addClass("on").siblings().removeClass("on");
+      }
+      return false;
+    });
+  </script>
+</html>

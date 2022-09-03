@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <link rel="shortcut icon" href="../images/common/favicon.ico" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <title>Minions: The Rise of Gru</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/greensock/gsap.min.js"></script>
+    <script src="../js/greensock/CSSRulePlugin.min.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="ticketBtn"><a href="tickets.html">Get Tickets</a></div>
+      <div class="shareBtn">
+        <a href="">Share <span class="material-icons"> ios_share </span></a>
+      </div>
+    </header>
+    <!-- header end -->
+    <div class="menu">
+      <ul>
+        <li class="menuLogo"><img src="../images/main/tt2.png" alt="" /></li>
+        <li class="on txt"><a href="index.html">HOME</a></li>
+        <li class="txt"><a href="tickets.html">SHOWTIMES</a></li>
+        <li class="txt"><a href="videos.html">VIDEOS</a></li>
+        <li class="txt"><a href="story.html">STORY</a></li>
+        <li class="txt"><a href="partners.html">PARTNERS</a></li>
+      </ul>
+    </div>
+    <!-- menu end -->
+    <div class="section" id="home">
+      <div class="bgCover"></div>
+      <img class="mainLogo" src="../images/main/tt.png" alt="" />
+      <div class="btn watchBtn"><a href="videos.html">Watch Trailer</a></div>
+      <div class="bgVideo">
+        <video autoplay muted playsinline loop>
+          <source src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/minions-the-rise-of-gru/video/bg.webm" type="video/webm" />
+          <!-- <source src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/minions-the-rise-of-gru/video/portrait_bg.mp4" type="video/mp4" /> -->
+        </video>
+      </div>
+      <span class="material-icons south on"> south </span>
+    </div>
+    <!-- home end -->
+    <div class="section" id="watchMore">
+      <h2>Watch More</h2>
+      <ul class="videoList">
+        <li>
+          <a href="videos.html">
+            <img src="../images/main/thumbnail01.jpeg" alt="" />
+            <div class="title">
+              <span class="material-icons-outlined"> play_arrow </span>
+              <span class="txt">Minions: The Rise of Gru Official Trailer</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="videos.html">
+            <img src="../images/main/thumbnail02.jpeg" alt="" />
+            <div class="title">
+              <span class="material-icons-outlined"> play_arrow </span>
+              <span class="txt">Minions: The Rise of Gru Official Trailer</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="videos.html">
+            <img src="../images/main/thumbnail03.jpeg" alt="" />
+            <div class="title">
+              <span class="material-icons-outlined"> play_arrow </span>
+              <span class="txt">Minions: The Rise of Gru Official Trailer</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <div class="btn"><a href="videos.html">View All</a></div>
+    </div>
+    <!-- watchMore end -->
+    <footer id="footer">
+      <span class="material-icons north"> north </span>
+      <div class="copyright">
+        <span class="txt">MOVIE PLATFORM © 2022 POWSTER</span>
+        <span>© 2022 Universal Pictures. ALL RIGHTS RESERVED.</span>
+      </div>
+      <div class="legalsCredits"><a href="">Legals & Credits</a></div>
+    </footer>
+    <!-- footer end -->
+    <script src="../js/menu.js"></script>
+    <script>
+      const downBtn = $(".south");
+      const upBtn = $(".north");
+      const mainLogo = $(".mainLogo");
+      const watchBtn = $(".watchBtn");
+
+      upBtn.on("click", function () {
+        $("html, body").animate({ scrollTop: 0 }, 500);
+        return false;
+      });
+      downBtn.on("click", function () {
+        $("html, body").animate({ scrollTop: $(window).height() }, 500);
+        return false;
+      });
+      $(window).scroll(function () {
+        const top = $(window).scrollTop();
+        if (top > 300) {
+          downBtn.removeClass("on");
+        } else {
+          downBtn.addClass("on");
+        }
+      });
+      $(window).scroll(function () {
+        const top = $(window).scrollTop();
+        if (top > 100) {
+          mainLogo.addClass("scroll");
+          watchBtn.addClass("scroll");
+        } else {
+          mainLogo.removeClass("scroll");
+          watchBtn.removeClass("scroll");
+        }
+      });
+    </script>
+  </body>
+</html>

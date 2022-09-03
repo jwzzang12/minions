@@ -1,0 +1,258 @@
+body {
+  font-family: "Albert Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #000;
+}
+
+a {
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+#header {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 99;
+}
+#header .menuBtn {
+  width: 25px;
+  height: 80px;
+  position: absolute;
+  left: 35px;
+}
+#header .menuBtn.open span:nth-child(1) {
+  top: 40px;
+  transform: rotate(45deg);
+}
+#header .menuBtn.open span:nth-child(2) {
+  opacity: 0;
+}
+#header .menuBtn.open span:nth-child(3) {
+  top: 40px;
+  transform: rotate(-45deg);
+}
+#header .menuBtn span {
+  width: 25px;
+  height: 1px;
+  position: absolute;
+  transition: all 0.25s ease;
+  content: "";
+  background-color: #fff;
+}
+#header .menuBtn span:nth-child(1) {
+  top: 33px;
+}
+#header .menuBtn span:nth-child(2) {
+  width: 20px;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#header .menuBtn span:nth-child(3) {
+  top: 47px;
+}
+#header .ticketBtn {
+  width: 100px;
+  position: absolute;
+  right: 150px;
+  padding: 15px;
+  color: #111;
+  background-color: #fbe940;
+  border-radius: 100px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#header .shareBtn {
+  position: absolute;
+  right: 35px;
+  font-size: 18px;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#header .shareBtn .material-icons {
+  margin-left: 7px;
+  font-size: 18px;
+  transform: translateY(2px);
+}
+#header .shareBtn.black {
+  color: #000;
+}
+
+.menu {
+  width: 100%;
+  height: calc(100vh - 80px);
+  position: fixed;
+  z-index: 30;
+  padding-top: 80px;
+  transform: translateY(-1000px);
+  background: #000;
+  transition: all 1s ease;
+}
+.menu ul {
+  width: 500px;
+  margin: 0 auto;
+  font-size: 48px;
+  font-weight: 800;
+  text-align: center;
+}
+.menu ul li {
+  width: fit-content;
+  position: relative;
+  margin: 0 auto 40px;
+}
+.menu ul li.on {
+  overflow: hidden;
+}
+.menu ul li.on:after {
+  display: block;
+  width: 110%;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  opacity: 1;
+  content: "";
+  background-color: #fbe940;
+}
+.menu ul li:not(.on):hover {
+  color: rgb(83, 102, 233);
+}
+.menu.open {
+  transform: translateY(0);
+}
+
+.menuLogo img {
+  width: 40%;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  position: relative;
+  padding: 0 100px;
+  background-color: #000;
+}
+#footer .copyright {
+  font-size: 12px;
+  color: #555;
+}
+#footer .copyright span {
+  margin-right: 10px;
+}
+
+@media all and (max-width: 1200px) {
+  .menu ul {
+    width: clamp(250px, 48vw, 500px);
+    font-size: clamp(24px, 4vw, 48px);
+  }
+}
+@media all and (max-width: 960px) {
+  .menuLogo img {
+    width: 40%;
+  }
+  #footer {
+    padding: 0 clamp(10px, 10vw, 150px);
+  }
+  #footer .copyright span {
+    display: inline-block;
+  }
+}
+@media all and (max-width: 640px) {
+  .menu {
+    height: calc(100vh - 60px);
+  }
+  #header {
+    height: 60px;
+  }
+  #header .menuBtn {
+    width: 20px;
+    height: 60px;
+    left: 20px;
+  }
+  #header .menuBtn.open span:nth-child(1) {
+    top: 30px;
+  }
+  #header .menuBtn.open span:nth-child(3) {
+    top: 30px;
+  }
+  #header .menuBtn span {
+    width: 20px;
+  }
+  #header .menuBtn span:nth-child(1) {
+    top: 23px;
+  }
+  #header .menuBtn span:nth-child(2) {
+    width: 17px;
+    top: 30px;
+  }
+  #header .menuBtn span:nth-child(3) {
+    top: 37px;
+  }
+  #header .shareBtn {
+    right: 20px;
+    font-size: clamp(12px, 3vw, 18px);
+  }
+  #header .shareBtn .material-icons {
+    font-size: clamp(12px, 3vw, 18px);
+  }
+  #header .ticketBtn {
+    display: none;
+  }
+  .menu {
+    padding-top: 60px;
+  }
+  .menu ul li.on:after {
+    height: 5px;
+  }
+  #footer {
+    display: block;
+    height: 100%;
+  }
+  #footer .copyright {
+    padding: 30px 0;
+    text-align: right;
+  }
+  #footer .legalsCredits {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+  }
+  #footer .legalsCredits:before {
+    display: block;
+    width: 110vw;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: -70px;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
