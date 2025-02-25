@@ -1,0 +1,25 @@
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 100px;
+  padding: 0 100px;
+  background-color: #000;
+  .copyright {
+    font-size: 1.2rem;
+    color: #555;
+  }
+}
+
+.north {
+  position: absolute;
+  left: 35px;
+  z-index: 50;
+  font-size: 4rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-10px);
+  }
+}

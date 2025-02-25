@@ -1,0 +1,54 @@
+header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 80px;
+  .menu-btn {
+    position: absolute;
+    top: 0;
+    left: 35px;
+    cursor: pointer;
+    &::before,
+    &::after,
+    span {
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 25px;
+      height: 1px;
+      background-color: $font-color;
+      transition: transform 0.25s ease;
+      content: '';
+    }
+    span {
+      top: 40px;
+    }
+    &::before {
+      top: 33px;
+    }
+    &::after {
+      top: 47px;
+    }
+  }
+  .ticket-btn {
+    position: absolute;
+    right: 150px;
+    padding: 15px 30px;
+    border-radius: 100px;
+    color: $bg-color;
+    background-color: $main-color;
+  }
+  .share-btn {
+    position: absolute;
+    right: 35px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    .material-symbols-rounded {
+      margin-left: 5px;
+      font-size: 2rem;
+      transform: translateY(2px);
+    }
+  }
+}
