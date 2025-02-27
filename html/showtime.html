@@ -47,8 +47,8 @@
             <img src="../images/logos/logo.png" alt="Minions: The Rise of Gru logo" loading="lazy" />
           </a>
         </li>
-        <li class="menu-item"><a href="#">Home</a></li>
-        <li class="menu-item active"><a href="#">Showtimes</a></li>
+        <li class="menu-item"><a href="./index.html">Home</a></li>
+        <li class="menu-item active"><a href="./showtime.html">Showtimes</a></li>
         <li class="menu-item"><a href="#">Videos</a></li>
         <li class="menu-item"><a href="#">Story</a></li>
         <li class="menu-item"><a href="#">Partners</a></li>
@@ -101,4 +101,46 @@
   scrollUpBtn.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  const hamburgerBtn = document.querySelector('.hamburger');
+  const closeBtn = document.querySelector('.close');
+
+  const openMenu = () => {
+    menu.classList.add('open');
+    menuBtn.classList.add('open');
+    menuBtn.classList.remove('hidden');
+    hamburgerBtn.classList.add('hidden');
+    closeBtn.classList.add('hidden');
+
+    if (menu.classList.contains('open')) {
+      menuTL.restart();
+      menuLogoTL.restart();
+    }
+  };
+
+  const closeMenu = () => {
+    menu.classList.remove('open');
+    menuBtn.classList.remove('open');
+    menuBtn.classList.add('hidden');
+    hamburgerBtn.classList.remove('hidden');
+    closeBtn.classList.remove('hidden');
+  };
+
+  hamburgerBtn.addEventListener('click', () => {
+    openMenu();
+  });
+
+  menuBtn.addEventListener('click', () => {
+    closeMenu();
+  });
+
+  const updateCloseBtnPos = () => {
+    const searchBox = document.querySelector('.search-box');
+    const closeBtnPos = searchBox.offsetWidth;
+
+    closeBtn.style.right = closeBtnPos + 'px';
+  };
+
+  window.addEventListener('load', updateCloseBtnPos);
+  window.addEventListener('resize', updateCloseBtnPos);
 </script>
