@@ -451,3 +451,38 @@ header .share-btn .material-symbols-rounded {
   padding: 20px;
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
 }
+
+#partners {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 80px;
+}
+#partners img {
+  width: 45%;
+  margin: 0 auto;
+}
+#partners h2 {
+  margin: 50px 0;
+  font-size: 6rem;
+}
+#partners .partners-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 800px;
+  margin: 20px auto 70px;
+}
+#partners .partners-box .partners-item {
+  margin-bottom: 50px;
+  flex: 0 0 calc(33.33% - 10px);
+}
+#partners .partners-box .partners-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#partners .partners-box .partners-item a img {
+  width: 80%;
+}
