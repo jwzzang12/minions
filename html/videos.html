@@ -34,53 +34,37 @@
       <ul>
         <li class="menu-logo">
           <a href="#">
-            <img src="../images/logos/logo.png" alt="Minions: The Rise of Gru logo" loading="lazy" />
+            <img src="../images/logos/logo.png" alt="Minions: The Rise of Gru logo" loading="lazy" class="active" />
           </a>
         </li>
         <li class="menu-item"><a href="./index.html">Home</a></li>
         <li class="menu-item"><a href="./showtime.html">Showtimes</a></li>
-        <li class="menu-item"><a href="#">Videos</a></li>
+        <li class="menu-item active"><a href="./videos.html">Videos</a></li>
         <li class="menu-item"><a href="#">Story</a></li>
-        <li class="menu-item active"><a href="./partners.html">Partners</a></li>
+        <li class="menu-item"><a href="./partners.htmlß">Partners</a></li>
       </ul>
     </nav>
     <!-- menu end -->
 
-    <section id="partners">
+    <section id="videos">
       <div class="bg-cover"></div>
-      <img src="../images/logos/logo-partners.png" alt="Minions: The Rise of Gru logo" />
-      <h2>PARTNERS</h2>
-      <div class="partners-box">
-        <div class="partners-item">
-          <a href="#"><img src="../images/partners/liberty-mutual.png" alt="liberty mutual logo" /></a>
-        </div>
-        <div class="partners-item">
-          <a href="#"><img src="../images/partners/carmax.png" alt="carmax logo" /></a>
-        </div>
-        <div class="partners-item">
-          <a href="#"><img src="../images/partners/iHOP.png" alt="iHOP logo" /></a>
-        </div>
-        <div class="partners-item">
-          <a href="#"><img src="../images/partners/zip-recruiter.png" alt="zip recruiter logo" /></a>
-        </div>
-        <div class="partners-item">
-          <a href="#"><img src="../images/partners/hello-fresh.png" alt="hello fresh logo" /></a>
-        </div>
-        <div class="partners-item">
-          <a href="#"><img src="../images/partners/levis.png" alt="levis logo" /></a>
-        </div>
-        <div class="partners-item">
-          <a href="#"><img src="../images/partners/hippeas.png" alt="hippeas logo" /></a>
-        </div>
-        <div class="partners-item">
-          <a href="#"><img src="../images/partners/olipop.png" alt="olipoplogo" /></a>
-        </div>
-        <div class="partners-item">
-          <a href="#"><img src="../images/partners/supergoop.png" alt="supergoop logo" /></a>
-        </div>
-      </div>
+      <ul class="tab-menu">
+        <li class="tab-item active" data-code="HhIl_XJ-OGA">
+          <img src="../images/thumbnails/thumbnail01.jpeg" alt="Minions: The Rise of Gru Official Trailer 3" />
+          <div class="video-title">Minions: The Rise of Gru | Official Trailer 3</div>
+        </li>
+        <li class="tab-item" data-code="6DxjJzmYsXo">
+          <img src="../images/thumbnails/thumbnail02.jpeg" alt="Minions: The Rise of Gru Official Trailer" />
+          <div class="video-title">Minions: The Rise of Gru | Official Trailer</div>
+        </li>
+        <li class="tab-item" data-code="VPtcAtAuuQE">
+          <img src="../images/thumbnails/thumbnail03.jpeg" alt="Minions: The Rise of Gru Official Trailer | on our way" />
+          <div class="video-title">Minions: The Rise of Gru | On Our way</div>
+        </li>
+      </ul>
+      <div class="video-box"></div>
     </section>
-    <!-- partners end -->
+    <!-- videos end -->
 
     <footer id="footer">
       <span class="material-symbols-rounded north"> north </span>
@@ -93,3 +77,37 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 <script src="../js/menu.js"></script>
 <script src="../js/scrollUpBtn.js"></script>
+<script>
+  const videosSection = document.querySelector('#videos');
+  const videosWidth = videosSection ? videosSection.offsetWidth : 0;
+
+  const changeVideo = (code) => {
+    const iframeHTML = `
+      <iframe
+        width="700"
+        height="400"
+        src="https://www.youtube.com/embed/${code}"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    `;
+    const videoBox = document.querySelector('#videos .video-box');
+    if (videoBox) {
+      videoBox.innerHTML = iframeHTML;
+    }
+  };
+
+  changeVideo('HhIl_XJ-OGA');
+
+  const tabItems = document.querySelectorAll('#videos .tab-menu li');
+  tabItems.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      const code = e.currentTarget.getAttribute('data-code');
+      changeVideo(code);
+      tabItems.forEach((i) => i.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+    });
+  });
+</script>
