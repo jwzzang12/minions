@@ -112,15 +112,15 @@
   const mainLogo = document.querySelector('.main-logo');
   const trailerBtn = document.querySelector('.trailer-btn');
 
-  scrollDownBtn.addEventListener('click', function () {
+  scrollDownBtn.addEventListener('click', () => {
     window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
   });
 
-  scrollUpBtn.addEventListener('click', function () {
+  scrollUpBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY;
 
     if (scrollPosition > 300) {

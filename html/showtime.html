@@ -47,8 +47,8 @@
             <img src="../images/logos/logo.png" alt="Minions: The Rise of Gru logo" loading="lazy" />
           </a>
         </li>
-        <li class="menu-item active"><a href="#">Home</a></li>
-        <li class="menu-item"><a href="#">Showtimes</a></li>
+        <li class="menu-item"><a href="#">Home</a></li>
+        <li class="menu-item active"><a href="#">Showtimes</a></li>
         <li class="menu-item"><a href="#">Videos</a></li>
         <li class="menu-item"><a href="#">Story</a></li>
         <li class="menu-item"><a href="#">Partners</a></li>
@@ -56,49 +56,43 @@
     </nav>
     <!-- menu end -->
 
-    <section id="showtime"></section>
+    <section id="showtime">
+      <div class="bgCover"></div>
+      <div class="poster-box">
+        <img src="../images/posters/poster.jpeg" alt="Minions: The Rise of Gru poster" loading="lazy" />
+      </div>
+      <div class="search-box">
+        <h2 class="sr-only">Search</h2>
+        <form action="">
+          <input type="text" placeholder="Search" />
+          <button><span class="material-symbols-rounded"> search </span></button>
+        </form>
+      </div>
+      <div class="result-box">
+        <div class="result-menu"><span class="material-symbols-rounded"> list </span><span class="material-symbols-rounded"> map </span></div>
+        <div class="result">
+          <span class="material-symbols-rounded"> event_busy </span>
+          <p>It looks like you're in South Korea, and this page is for users in USA</p>
+          <p class="small">Change your search location for new results</p>
+        </div>
+      </div>
+      <footer id="footer">
+        <span class="material-symbols-rounded north"> north </span>
+        <div class="copyright">MOVIE PLATFORM © 2022 POWSTER © 2022 Universal Pictures. ALL RIGHTS RESERVED.</div>
+        <div class="legals"><a href="#">Legals & Credits</a></div>
+      </footer>
+      <!-- footer end -->
+    </section>
     <!-- showtime end -->
-
-    <footer id="footer">
-      <span class="material-symbols-rounded north"> north </span>
-      <div class="copyright">MOVIE PLATFORM © 2022 POWSTER © 2022 Universal Pictures. ALL RIGHTS RESERVED.</div>
-      <div class="legals"><a href="#">Legals & Credits</a></div>
-    </footer>
-    <!-- footer end -->
   </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 
 <script src="../js/menu.js"></script>
 <script>
-  const scrollDownBtn = document.querySelector('.south');
   const scrollUpBtn = document.querySelector('.north');
-  const mainLogo = document.querySelector('.main-logo');
-  const trailerBtn = document.querySelector('.trailer-btn');
-
-  scrollDownBtn.addEventListener('click', function () {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-  });
 
   scrollUpBtn.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  window.addEventListener('scroll', function () {
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > 300) {
-      scrollDownBtn.classList.remove('visible');
-    } else {
-      scrollDownBtn.classList.add('visible');
-    }
-
-    if (scrollPosition > 100) {
-      mainLogo.classList.remove('visible');
-      trailerBtn.classList.remove('visible');
-    } else {
-      mainLogo.classList.add('visible');
-      trailerBtn.classList.add('visible');
-    }
   });
 </script>
