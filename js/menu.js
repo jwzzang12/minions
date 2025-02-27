@@ -14,7 +14,7 @@ const menuLogoTL = gsap.timeline().from('.menu-logo', {
   duration: 0.5,
 });
 
-menuBtn.addEventListener('click', function () {
+menuBtn.addEventListener('click', () => {
   menu.classList.toggle('open');
   menuBtn.classList.toggle('open');
   if (menu.classList.contains('open')) {
@@ -23,9 +23,7 @@ menuBtn.addEventListener('click', function () {
   }
 });
 
-menu.addEventListener('wheel', function (e) {
-  e.preventDefault();
-});
+menu.addEventListener('wheel', (e) => e.preventDefault());
 
 gsap.to('.bg-cover', {
   opacity: 0,
