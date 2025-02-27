@@ -7,6 +7,7 @@
     .tab-item {
       height: 150px;
       margin: 15px 30px;
+      cursor: pointer;
       &.active {
         img {
           width: 100%;

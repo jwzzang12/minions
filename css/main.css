@@ -289,6 +289,9 @@ header .share-btn .material-symbols-rounded {
   justify-content: space-between;
   margin-bottom: 45px;
 }
+#trailers .trailer-list .trailer-item {
+  cursor: pointer;
+}
 #trailers .trailer-list .trailer-item img {
   width: 100%;
 }
@@ -463,6 +466,7 @@ header .share-btn .material-symbols-rounded {
 #videos .tab-menu .tab-item {
   height: 150px;
   margin: 15px 30px;
+  cursor: pointer;
 }
 #videos .tab-menu .tab-item.active img {
   width: 100%;
@@ -512,14 +516,12 @@ header .share-btn .material-symbols-rounded {
   margin: 20px auto 70px;
 }
 #partners .partners-box .partners-item {
-  margin-bottom: 50px;
-  flex: 0 0 calc(33.33% - 10px);
-}
-#partners .partners-box .partners-item a {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
+  flex: 0 0 calc(33.33% - 10px);
 }
-#partners .partners-box .partners-item a img {
+#partners .partners-box .partners-item img {
   width: 80%;
 }
