@@ -5,9 +5,11 @@
   height: 100vh;
   padding-top: 80px;
   background: $bg-color;
-  display: none;
-  // transform: translateY(-1000px);
-  // transition: all 1s ease;
+  transform: translateY(-1000px);
+  transition: all 1s ease;
+  &.open {
+    transform: translateY(0);
+  }
   .menu-logo {
     img {
       width: 15%;
@@ -21,6 +23,23 @@
       font-size: 4.8rem;
       font-weight: 800;
       text-transform: uppercase;
+      position: relative;
+      &.active {
+        overflow: hidden;
+        &::after {
+          display: block;
+          position: absolute;
+          top: 50%;
+          width: 110%;
+          height: 8px;
+          background-color: $main-color;
+          opacity: 1;
+          content: '';
+        }
+      }
+      &:not(.active):hover {
+        color: $sub-color;
+      }
     }
   }
 }

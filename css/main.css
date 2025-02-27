@@ -53,11 +53,11 @@ header .menu-btn {
   position: absolute;
   top: 0;
   left: 35px;
+  width: 25px;
+  height: 100%;
   cursor: pointer;
 }
-header .menu-btn::before, header .menu-btn::after,
 header .menu-btn span {
-  display: block;
   position: absolute;
   left: 0;
   width: 25px;
@@ -66,14 +66,28 @@ header .menu-btn span {
   transition: transform 0.25s ease;
   content: "";
 }
-header .menu-btn span {
-  top: 40px;
-}
-header .menu-btn::before {
+header .menu-btn span:nth-child(1) {
   top: 33px;
 }
-header .menu-btn::after {
+header .menu-btn span:nth-child(2) {
+  width: 20px;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header .menu-btn span:nth-child(3) {
   top: 47px;
+}
+header .menu-btn.open span:nth-child(1) {
+  top: 40px;
+  transform: rotate(45deg);
+}
+header .menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+header .menu-btn.open span:nth-child(3) {
+  top: 40px;
+  transform: rotate(-45deg);
 }
 header .ticket-btn {
   position: absolute;
@@ -102,7 +116,11 @@ header .share-btn .material-symbols-rounded {
   height: 100vh;
   padding-top: 80px;
   background: #121212;
-  display: none;
+  transform: translateY(-1000px);
+  transition: all 1s ease;
+}
+.menu.open {
+  transform: translateY(0);
 }
 .menu .menu-logo img {
   width: 15%;
@@ -116,6 +134,23 @@ header .share-btn .material-symbols-rounded {
   font-size: 4.8rem;
   font-weight: 800;
   text-transform: uppercase;
+  position: relative;
+}
+.menu ul .menu-item.active {
+  overflow: hidden;
+}
+.menu ul .menu-item.active::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 110%;
+  height: 8px;
+  background-color: #fbe940;
+  opacity: 1;
+  content: "";
+}
+.menu ul .menu-item:not(.active):hover {
+  color: rgb(83, 102, 233);
 }
 
 #footer {
@@ -135,7 +170,7 @@ header .share-btn .material-symbols-rounded {
 .north {
   position: absolute;
   left: 35px;
-  z-index: 50;
+  z-index: 10;
   font-size: 4rem;
   transition: all 0.25s ease;
   cursor: pointer;
@@ -152,24 +187,36 @@ header .share-btn .material-symbols-rounded {
   border: 2px solid #fbe940;
   border-radius: 100px;
   background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
   transition: all 0.5s ease;
+  pointer-events: none;
 }
 .trailer-btn:hover {
   color: #121212;
   background-color: #fbe940;
+}
+.trailer-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .south {
   position: absolute;
   bottom: -20px;
   left: 35px;
-  z-index: 50;
+  z-index: 10;
   font-size: 4rem;
+  opacity: 0;
   transition: all 0.25s ease;
   cursor: pointer;
+  pointer-events: none;
 }
 .south:hover {
   transform: translateY(10px);
+}
+.south.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #home {
@@ -183,6 +230,13 @@ header .share-btn .material-symbols-rounded {
 }
 #home .main-logo {
   width: 30%;
+  opacity: 0;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+#home .main-logo.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 #home .trailer-btn {
   margin-top: 30px;

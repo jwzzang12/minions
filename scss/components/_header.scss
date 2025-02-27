@@ -9,11 +9,10 @@ header {
     position: absolute;
     top: 0;
     left: 35px;
+    width: 25px;
+    height: 100%;
     cursor: pointer;
-    &::before,
-    &::after,
     span {
-      display: block;
       position: absolute;
       left: 0;
       width: 25px;
@@ -21,15 +20,33 @@ header {
       background-color: $font-color;
       transition: transform 0.25s ease;
       content: '';
+      &:nth-child(1) {
+        top: 33px;
+      }
+      &:nth-child(2) {
+        width: 20px;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:nth-child(3) {
+        top: 47px;
+      }
     }
-    span {
-      top: 40px;
-    }
-    &::before {
-      top: 33px;
-    }
-    &::after {
-      top: 47px;
+    &.open {
+      span {
+        &:nth-child(1) {
+          top: 40px;
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          top: 40px;
+          transform: rotate(-45deg);
+        }
+      }
     }
   }
   .ticket-btn {
