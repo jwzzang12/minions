@@ -142,29 +142,30 @@
 <script src="../js/scrollUpBtn.js"></script>
 
 <script>
-  const scrollDownBtn = document.querySelector('.south');
-  const mainLogo = document.querySelector('.main-logo');
-  const trailerBtn = document.querySelector('.trailer-btn');
+  const more = document.querySelector('.more');
+  const less = document.querySelector('.less');
+  const descBox = document.querySelector('.desc-box');
 
-  scrollDownBtn.addEventListener('click', () => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+  more.addEventListener('click', () => {
+    more.classList.add('hidden');
+    less.classList.remove('hidden');
+
+    const synopsis = document.querySelector('.synopsis');
+    let synopsisH = synopsis.offsetHeight;
+    gsap.to('#story .desc-box', { height: `${synopsisH + 150}px`, duration: 2, delay: 0.1 });
+
+    if (more.classList.contains('hidden')) {
+      window.addEventListener('resize', () => {
+        let synopsisH = document.querySelector('.synopsis').offsetHeight;
+        gsap.to('#story .desc-box', { height: `${synopsisH + 150}px`, duration: 0.1 });
+      });
+    }
   });
 
-  window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > 300) {
-      scrollDownBtn.classList.remove('visible');
-    } else {
-      scrollDownBtn.classList.add('visible');
-    }
-
-    if (scrollPosition > 100) {
-      mainLogo.classList.remove('visible');
-      trailerBtn.classList.remove('visible');
-    } else {
-      mainLogo.classList.add('visible');
-      trailerBtn.classList.add('visible');
-    }
+  less.addEventListener('click', () => {
+    more.classList.remove('hidden');
+    less.classList.add('hidden');
+    gsap.to('#story .desc-box', { height: '450px', duration: 2, delay: 0.1 });
+    gsap.to('#story .poster', { y: 0 });
   });
 </script>

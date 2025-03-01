@@ -75,6 +75,10 @@
         background-color: $font-color;
         content: '';
       }
+      &.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
     }
   }
 }

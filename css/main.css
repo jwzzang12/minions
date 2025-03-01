@@ -570,6 +570,10 @@ header .share-btn .material-symbols-rounded {
   background-color: #fff;
   content: "";
 }
+#story .story-container .cover.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 
 #partners {
   display: flex;
