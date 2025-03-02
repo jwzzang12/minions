@@ -6,9 +6,9 @@
   border-radius: 50%;
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
   background-color: $orange-color;
+  opacity: 1;
   transition: all 0.25s ease;
   cursor: pointer;
-  opacity: 1;
   pointer-events: auto;
   span {
     width: 18px;
@@ -64,6 +64,9 @@
     img {
       height: 100%;
       vertical-align: top;
+    }
+    .mobile {
+      display: none;
     }
   }
   .search-box {
@@ -144,6 +147,58 @@
     .legals {
       padding: 20px;
       box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .circle-btn.close {
+    display: none;
+  }
+
+  #showtime {
+    flex-direction: column;
+    .poster-box {
+      .pc {
+        display: none;
+      }
+      .mobile {
+        display: block;
+        width: 100%;
+      }
+    }
+    .search-box {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .search-form {
+        padding: 20px 30px;
+        flex: 0 0 auto;
+        button {
+          right: 35px;
+          bottom: 27px;
+        }
+      }
+      .result-box {
+        flex: 1 1 auto;
+        .result-menu {
+          padding: 0 20px;
+        }
+        .result {
+          .material-symbols-rounded {
+            font-size: clamp(3rem, 7vw, 4.8rem);
+          }
+          p {
+            font-size: clamp(1.4rem, 4vw, 2rem);
+          }
+        }
+      }
+    }
+    #footer {
+      padding: 0 clamp(10px, 7vw, 100px);
+      .legals {
+        padding: 10px;
+      }
     }
   }
 }

@@ -39,15 +39,20 @@
   #videos {
     align-items: center;
     flex-direction: column-reverse;
+    height: 100%;
     .tab-menu {
-      display: flex;
-      justify-content: space-between;
       width: auto;
       padding-top: 30px;
+      .tab-item {
+        height: auto;
+        img {
+          width: 100%;
+        }
+      }
     }
     .video-box {
       iframe {
-        height: clamp(300px, 50vh, 450px);
+        height: clamp(300px, 35vh, 450px);
         padding: 0 20px;
       }
     }
