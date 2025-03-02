@@ -73,3 +73,9 @@ header {
     }
   }
 }
+
+@media (max-width: 767px) {
+  .ticket-btn {
+    display: none;
+  }
+}

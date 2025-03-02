@@ -112,6 +112,11 @@ header .share-btn .material-symbols-rounded {
   transform: translateY(2px);
 }
 
+@media (max-width: 767px) {
+  .ticket-btn {
+    display: none;
+  }
+}
 .menu {
   position: fixed;
   z-index: 50;
@@ -156,6 +161,18 @@ header .share-btn .material-symbols-rounded {
   color: rgb(83, 102, 233);
 }
 
+@media (max-width: 767px) {
+  .menu ul .menu-item {
+    font-size: clamp(3rem, 5vw, 4.8rem);
+    margin: 50px auto;
+  }
+  .menu ul .menu-item.active::after {
+    height: 5px;
+  }
+  .menu .menu-logo img {
+    width: 40%;
+  }
+}
 #footer {
   display: flex;
   justify-content: space-between;
@@ -185,6 +202,21 @@ header .share-btn .material-symbols-rounded {
   transform: translateY(-10px);
 }
 
+@media (max-width: 767px) {
+  .north {
+    bottom: 80px;
+  }
+  #footer {
+    padding: 0 clamp(10px, 10vw, 100px);
+  }
+  #footer .copyright {
+    font-size: 1.1rem;
+    margin-right: 15px;
+  }
+  #footer .legals {
+    font-size: 1.1rem;
+  }
+}
 .trailer-btn {
   display: inline-block;
   width: fit-content;
@@ -274,7 +306,7 @@ header .share-btn .material-symbols-rounded {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: calc(90vh - 100px);
+  height: calc(100vh - 100px);
   padding: 80px 150px 0;
   background-color: #121212;
 }
@@ -307,6 +339,26 @@ header .share-btn .material-symbols-rounded {
   color: #fbe940;
 }
 
+@media (max-width: 768px) {
+  #trailers {
+    height: calc(100% - 100px);
+    padding: 80px clamp(20px, 10vw, 150px) 20px;
+  }
+  #trailers h2 {
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+  #trailers .trailer-list {
+    margin: 0;
+    display: block;
+  }
+  #trailers .trailer-list .trailer-titlebox {
+    padding: 20px 0;
+    font-size: 1.4rem;
+  }
+  #trailers .trailer-btn {
+    margin-top: 30px;
+  }
+}
 .circle-btn {
   position: absolute;
   z-index: 50;

@@ -103,10 +103,12 @@
 <script>
   const scrollDownBtn = document.querySelector('.south');
   const mainLogo = document.querySelector('.main-logo');
-  const trailerBtn = document.querySelector('.trailer-btn');
+  const homeTrailerBtn = document.querySelector('#home .trailer-btn');
+  const trailerBtn = document.querySelector('#trailers .trailer-btn');
+  const homeHeight = document.querySelector('#home').offsetHeight;
 
   scrollDownBtn.addEventListener('click', () => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    window.scrollTo({ top: homeHeight, behavior: 'smooth' });
   });
 
   window.addEventListener('scroll', () => {
@@ -120,10 +122,12 @@
 
     if (scrollPosition > 100) {
       mainLogo.classList.remove('visible');
-      trailerBtn.classList.remove('visible');
+      homeTrailerBtn.classList.remove('visible');
+      trailerBtn.classList.add('visible');
     } else {
       mainLogo.classList.add('visible');
-      trailerBtn.classList.add('visible');
+      homeTrailerBtn.classList.add('visible');
+      trailerBtn.classList.remove('visible');
     }
   });
 </script>

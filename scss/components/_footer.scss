@@ -26,3 +26,19 @@
     transform: translateY(-10px);
   }
 }
+
+@media (max-width: 767px) {
+  .north {
+    bottom: 80px;
+  }
+  #footer {
+    padding: 0 clamp(10px, 10vw, 100px);
+    .copyright {
+      font-size: 1.1rem;
+      margin-right: 15px;
+    }
+    .legals {
+      font-size: 1.1rem;
+    }
+  }
+}

@@ -87,7 +87,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  height: calc(90vh - 100px);
+  height: calc(100vh - 100px);
   padding: 80px 150px 0;
   background-color: $bg-color;
   h2 {
@@ -116,6 +116,27 @@
     .material-symbols-rounded {
       font-size: 3rem;
       color: $main-color;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #trailers {
+    height: calc(100% - 100px);
+    padding: 80px clamp(20px, 10vw, 150px) 20px;
+    h2 {
+      font-size: clamp(3rem, 7vw, 5rem);
+    }
+    .trailer-list {
+      margin: 0;
+      display: block;
+      .trailer-titlebox {
+        padding: 20px 0;
+        font-size: 1.4rem;
+      }
+    }
+    .trailer-btn {
+      margin-top: 30px;
     }
   }
 }

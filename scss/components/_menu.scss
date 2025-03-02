@@ -43,3 +43,22 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .menu {
+    ul {
+      .menu-item {
+        font-size: clamp(3rem, 5vw, 4.8rem);
+        margin: 50px auto;
+        &.active::after {
+          height: 5px;
+        }
+      }
+    }
+    .menu-logo {
+      img {
+        width: 40%;
+      }
+    }
+  }
+}
