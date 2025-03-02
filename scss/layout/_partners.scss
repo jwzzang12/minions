@@ -3,6 +3,7 @@
   align-items: center;
   flex-direction: column;
   padding-top: 80px;
+  min-height: calc(100vh - 100px);
   img {
     width: 45%;
     margin: 0 auto;
@@ -26,6 +27,26 @@
       flex: 0 0 calc(33.33% - 10px);
       img {
         width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #partners {
+    h2 {
+      margin: clamp(30px, 8vw, 50px) 0;
+      font-size: clamp(2.4rem, 8vw, 6rem);
+    }
+    .partners-box {
+      width: 100%;
+      display: block;
+      margin: 20px auto;
+      .partners-item {
+        margin-bottom: 30px;
+        img {
+          width: 70%;
+        }
       }
     }
   }

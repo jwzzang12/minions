@@ -5,7 +5,7 @@
   height: 100vh;
   padding-top: 80px;
   background: $bg-color;
-  transform: translateY(-1000px);
+  transform: translateY(-1500px);
   transition: all 1s ease;
   &.open {
     transform: translateY(0);
@@ -16,14 +16,19 @@
     }
   }
   ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 100px;
     text-align: center;
     .menu-item {
+      position: relative;
       width: fit-content;
       margin: 30px auto;
       font-size: 4.8rem;
       font-weight: 800;
       text-transform: uppercase;
-      position: relative;
       &.active {
         overflow: hidden;
         &::after {
@@ -49,7 +54,6 @@
     ul {
       .menu-item {
         font-size: clamp(3rem, 5vw, 4.8rem);
-        margin: 50px auto;
         &.active::after {
           height: 5px;
         }

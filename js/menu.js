@@ -28,6 +28,6 @@ menu.addEventListener('wheel', (e) => e.preventDefault());
 gsap.to('.bg-cover', {
   opacity: 0,
   duration: 1,
-  y: -1000,
+  y: -1500,
   delay: 0.1,
 });

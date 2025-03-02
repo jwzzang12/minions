@@ -124,7 +124,7 @@ header .share-btn .material-symbols-rounded {
   height: 100vh;
   padding-top: 80px;
   background: #121212;
-  transform: translateY(-1000px);
+  transform: translateY(-1500px);
   transition: all 1s ease;
 }
 .menu.open {
@@ -134,15 +134,20 @@ header .share-btn .material-symbols-rounded {
   width: 15%;
 }
 .menu ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 100px;
   text-align: center;
 }
 .menu ul .menu-item {
+  position: relative;
   width: fit-content;
   margin: 30px auto;
   font-size: 4.8rem;
   font-weight: 800;
   text-transform: uppercase;
-  position: relative;
 }
 .menu ul .menu-item.active {
   overflow: hidden;
@@ -164,7 +169,6 @@ header .share-btn .material-symbols-rounded {
 @media (max-width: 767px) {
   .menu ul .menu-item {
     font-size: clamp(3rem, 5vw, 4.8rem);
-    margin: 50px auto;
   }
   .menu ul .menu-item.active::after {
     height: 5px;
@@ -204,14 +208,14 @@ header .share-btn .material-symbols-rounded {
 
 @media (max-width: 767px) {
   .north {
-    bottom: 80px;
+    display: none;
   }
   #footer {
-    padding: 0 clamp(10px, 10vw, 100px);
+    padding: 0 0 clamp(10px, 7vw, 100px);
   }
   #footer .copyright {
-    font-size: 1.1rem;
     margin-right: 15px;
+    font-size: 1.1rem;
   }
   #footer .legals {
     font-size: 1.1rem;
@@ -339,7 +343,7 @@ header .share-btn .material-symbols-rounded {
   color: #fbe940;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #trailers {
     height: calc(100% - 100px);
     padding: 80px clamp(20px, 10vw, 150px) 20px;
@@ -509,7 +513,7 @@ header .share-btn .material-symbols-rounded {
 
 #videos {
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 100px);
 }
 #videos .tab-menu {
   width: 300px;
@@ -537,14 +541,27 @@ header .share-btn .material-symbols-rounded {
   padding-top: 80px;
 }
 #videos .video-box iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   padding: 100px;
 }
 
+@media (max-width: 767px) {
+  #videos {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  #videos .tab-menu {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    padding-top: 30px;
+  }
+  #videos .video-box iframe {
+    height: clamp(300px, 50vh, 450px);
+    padding: 0 20px;
+  }
+}
 #story .story-container {
   display: flex;
   justify-content: center;
@@ -632,6 +649,7 @@ header .share-btn .material-symbols-rounded {
   align-items: center;
   flex-direction: column;
   padding-top: 80px;
+  min-height: calc(100vh - 100px);
 }
 #partners img {
   width: 45%;
@@ -658,4 +676,22 @@ header .share-btn .material-symbols-rounded {
 }
 #partners .partners-box .partners-item img {
   width: 80%;
+}
+
+@media (max-width: 767px) {
+  #partners h2 {
+    margin: clamp(30px, 8vw, 50px) 0;
+    font-size: clamp(2.4rem, 8vw, 6rem);
+  }
+  #partners .partners-box {
+    width: 100%;
+    display: block;
+    margin: 20px auto;
+  }
+  #partners .partners-box .partners-item {
+    margin-bottom: 30px;
+  }
+  #partners .partners-box .partners-item img {
+    width: 70%;
+  }
 }
