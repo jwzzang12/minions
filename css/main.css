@@ -130,17 +130,14 @@ header .share-btn .material-symbols-rounded {
 .menu.open {
   transform: translateY(0);
 }
-.menu .menu-logo {
-  margin-bottom: 20px;
-}
 .menu .menu-logo img {
   width: 20%;
 }
 .menu ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: stretch;
   flex-direction: column;
-  padding-bottom: 100px;
+  height: 100%;
   text-align: center;
 }
 .menu ul .menu-item {
@@ -354,8 +351,8 @@ header .share-btn .material-symbols-rounded {
     font-size: clamp(3rem, 7vw, 5rem);
   }
   #trailers .trailer-list {
-    margin: 0;
     display: block;
+    margin: 0;
   }
   #trailers .trailer-list .trailer-titlebox {
     padding: 20px 0;
@@ -516,7 +513,7 @@ header .share-btn .material-symbols-rounded {
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 959px) {
   .circle-btn.close {
     display: none;
   }
@@ -621,6 +618,7 @@ header .share-btn .material-symbols-rounded {
 #story .story-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 80px 120px;
 }
 #story .story-container .poster {
@@ -634,7 +632,7 @@ header .share-btn .material-symbols-rounded {
 #story .story-container .desc-box {
   position: relative;
   width: 700px;
-  height: 450px;
+  height: calc(100vh - 200px);
   padding: 80px 0;
   color: #fff;
   overflow: hidden;
@@ -735,8 +733,8 @@ header .share-btn .material-symbols-rounded {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 80px;
   min-height: calc(100vh - 100px);
+  padding-top: 80px;
 }
 #partners img {
   width: 45%;
@@ -771,8 +769,8 @@ header .share-btn .material-symbols-rounded {
     font-size: clamp(2.4rem, 8vw, 6rem);
   }
   #partners .partners-box {
-    width: 100%;
     display: block;
+    width: 100%;
     margin: 20px auto;
   }
   #partners .partners-box .partners-item {

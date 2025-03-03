@@ -164,7 +164,7 @@
   less.addEventListener('click', () => {
     more.classList.remove('hidden');
     less.classList.add('hidden');
-    gsap.to('#story .desc-box', { height: '450px', duration: 2, delay: 0.1 });
+    gsap.to('#story .desc-box', { height: 'calc(100vh - 200px)', duration: 2, delay: 0.1 });
     gsap.to('#story .poster', { y: 0 });
   });
 </script>
