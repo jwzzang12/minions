@@ -152,13 +152,12 @@
 
     const synopsis = document.querySelector('.synopsis');
     let synopsisH = synopsis.offsetHeight;
+
     gsap.to('#story .desc-box', { height: `${synopsisH + 150}px`, duration: 2, delay: 0.1 });
 
     if (more.classList.contains('hidden')) {
-      window.addEventListener('resize', () => {
-        let synopsisH = document.querySelector('.synopsis').offsetHeight;
-        gsap.to('#story .desc-box', { height: `${synopsisH + 150}px`, duration: 0.1 });
-      });
+      let synopsisH = document.querySelector('.synopsis').offsetHeight;
+      gsap.to('#story .desc-box', { height: `${synopsisH + 150}px`, duration: 2, delay: 0.1 });
     }
   });
 
