@@ -71,42 +71,42 @@
       <div class="legals"><a href="#">Legals & Credits</a></div>
     </footer>
     <!-- footer end -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/scrollUpBtn.js"></script>
+    <script>
+      const videosSection = document.querySelector('#videos');
+      const videosWidth = videosSection ? videosSection.offsetWidth : 0;
+
+      const changeVideo = (code) => {
+        const iframeHTML = `
+        <iframe
+          width="700"
+          height="400"
+          src="https://www.youtube.com/embed/${code}"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      `;
+        const videoBox = document.querySelector('#videos .video-box');
+        if (videoBox) {
+          videoBox.innerHTML = iframeHTML;
+        }
+      };
+
+      changeVideo('HhIl_XJ-OGA');
+
+      const tabItems = document.querySelectorAll('#videos .tab-menu li');
+      tabItems.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          const code = e.currentTarget.getAttribute('data-code');
+          changeVideo(code);
+          tabItems.forEach((i) => i.classList.remove('active'));
+          e.currentTarget.classList.add('active');
+        });
+      });
+    </script>
   </body>
 </html>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-<script src="../js/menu.js"></script>
-<script src="../js/scrollUpBtn.js"></script>
-<script>
-  const videosSection = document.querySelector('#videos');
-  const videosWidth = videosSection ? videosSection.offsetWidth : 0;
-
-  const changeVideo = (code) => {
-    const iframeHTML = `
-      <iframe
-        width="700"
-        height="400"
-        src="https://www.youtube.com/embed/${code}"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    `;
-    const videoBox = document.querySelector('#videos .video-box');
-    if (videoBox) {
-      videoBox.innerHTML = iframeHTML;
-    }
-  };
-
-  changeVideo('HhIl_XJ-OGA');
-
-  const tabItems = document.querySelectorAll('#videos .tab-menu li');
-  tabItems.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      const code = e.currentTarget.getAttribute('data-code');
-      changeVideo(code);
-      tabItems.forEach((i) => i.classList.remove('active'));
-      e.currentTarget.classList.add('active');
-    });
-  });
-</script>

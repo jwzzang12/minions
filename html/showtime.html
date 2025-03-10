@@ -90,51 +90,51 @@
       <!-- search-box end -->
     </section>
     <!-- showtime end -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/scrollUpBtn.js"></script>
+    <script>
+      const hamburgerBtn = document.querySelector('.hamburger');
+      const closeBtn = document.querySelector('.close');
+
+      const openMenu = () => {
+        menu.classList.add('open');
+        menuBtn.classList.add('open');
+        menuBtn.classList.remove('hidden');
+        hamburgerBtn.classList.add('hidden');
+        closeBtn.classList.add('hidden');
+
+        if (menu.classList.contains('open')) {
+          menuTL.restart();
+          menuLogoTL.restart();
+        }
+      };
+
+      const closeMenu = () => {
+        menu.classList.remove('open');
+        menuBtn.classList.remove('open');
+        menuBtn.classList.add('hidden');
+        hamburgerBtn.classList.remove('hidden');
+        closeBtn.classList.remove('hidden');
+      };
+
+      hamburgerBtn.addEventListener('click', () => {
+        openMenu();
+      });
+
+      menuBtn.addEventListener('click', () => {
+        closeMenu();
+      });
+
+      const updateCloseBtnPos = () => {
+        const searchBox = document.querySelector('.search-box');
+        const closeBtnPos = searchBox.offsetWidth;
+
+        closeBtn.style.right = closeBtnPos + 'px';
+      };
+
+      window.addEventListener('load', updateCloseBtnPos);
+      window.addEventListener('resize', updateCloseBtnPos);
+    </script>
   </body>
 </html>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-<script src="../js/menu.js"></script>
-<script src="../js/scrollUpBtn.js"></script>
-<script>
-  const hamburgerBtn = document.querySelector('.hamburger');
-  const closeBtn = document.querySelector('.close');
-
-  const openMenu = () => {
-    menu.classList.add('open');
-    menuBtn.classList.add('open');
-    menuBtn.classList.remove('hidden');
-    hamburgerBtn.classList.add('hidden');
-    closeBtn.classList.add('hidden');
-
-    if (menu.classList.contains('open')) {
-      menuTL.restart();
-      menuLogoTL.restart();
-    }
-  };
-
-  const closeMenu = () => {
-    menu.classList.remove('open');
-    menuBtn.classList.remove('open');
-    menuBtn.classList.add('hidden');
-    hamburgerBtn.classList.remove('hidden');
-    closeBtn.classList.remove('hidden');
-  };
-
-  hamburgerBtn.addEventListener('click', () => {
-    openMenu();
-  });
-
-  menuBtn.addEventListener('click', () => {
-    closeMenu();
-  });
-
-  const updateCloseBtnPos = () => {
-    const searchBox = document.querySelector('.search-box');
-    const closeBtnPos = searchBox.offsetWidth;
-
-    closeBtn.style.right = closeBtnPos + 'px';
-  };
-
-  window.addEventListener('load', updateCloseBtnPos);
-  window.addEventListener('resize', updateCloseBtnPos);
-</script>

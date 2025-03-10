@@ -94,40 +94,40 @@
       <div class="legals"><a href="#">Legals & Credits</a></div>
     </footer>
     <!-- footer end -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/scrollUpBtn.js"></script>
+
+    <script>
+      const scrollDownBtn = document.querySelector('.south');
+      const mainLogo = document.querySelector('.main-logo');
+      const homeTrailerBtn = document.querySelector('#home .trailer-btn');
+      const trailerBtn = document.querySelector('#trailers .trailer-btn');
+      const homeHeight = document.querySelector('#home').offsetHeight;
+
+      scrollDownBtn.addEventListener('click', () => {
+        window.scrollTo({ top: homeHeight, behavior: 'smooth' });
+      });
+
+      window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 300) {
+          scrollDownBtn.classList.remove('visible');
+        } else {
+          scrollDownBtn.classList.add('visible');
+        }
+
+        if (scrollPosition > 100) {
+          mainLogo.classList.remove('visible');
+          homeTrailerBtn.classList.remove('visible');
+          trailerBtn.classList.add('visible');
+        } else {
+          mainLogo.classList.add('visible');
+          homeTrailerBtn.classList.add('visible');
+          trailerBtn.classList.remove('visible');
+        }
+      });
+    </script>
   </body>
 </html>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-<script src="../js/menu.js"></script>
-<script src="../js/scrollUpBtn.js"></script>
-
-<script>
-  const scrollDownBtn = document.querySelector('.south');
-  const mainLogo = document.querySelector('.main-logo');
-  const homeTrailerBtn = document.querySelector('#home .trailer-btn');
-  const trailerBtn = document.querySelector('#trailers .trailer-btn');
-  const homeHeight = document.querySelector('#home').offsetHeight;
-
-  scrollDownBtn.addEventListener('click', () => {
-    window.scrollTo({ top: homeHeight, behavior: 'smooth' });
-  });
-
-  window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > 300) {
-      scrollDownBtn.classList.remove('visible');
-    } else {
-      scrollDownBtn.classList.add('visible');
-    }
-
-    if (scrollPosition > 100) {
-      mainLogo.classList.remove('visible');
-      homeTrailerBtn.classList.remove('visible');
-      trailerBtn.classList.add('visible');
-    } else {
-      mainLogo.classList.add('visible');
-      homeTrailerBtn.classList.add('visible');
-      trailerBtn.classList.remove('visible');
-    }
-  });
-</script>
