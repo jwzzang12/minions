@@ -425,6 +425,10 @@ header .share-btn .material-symbols-rounded {
   display: flex;
   height: 100vh;
 }
+#showtime .poster-box {
+  flex-shrink: 0;
+  width: auto;
+}
 #showtime .poster-box img {
   height: 100%;
   vertical-align: top;
@@ -433,7 +437,8 @@ header .share-btn .material-symbols-rounded {
   display: none;
 }
 #showtime .search-box {
-  width: 100%;
+  flex-grow: 1;
+  min-width: 0;
 }
 #showtime .search-box .search-form {
   position: relative;
